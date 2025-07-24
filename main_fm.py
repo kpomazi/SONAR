@@ -71,7 +71,7 @@ def main(args):
     feature_extractor = AutoFeatureExtractor.from_pretrained(model_name)
 
     wave_trn_loader, wave_dev_loader, wave_eval_loader = get_wavefake_loader('/kaggle/input/fakeaudio/generated_audio', seed=args.seed, batch_size=args.batch_size)
-    in_the_wild_loader = get_in_the_wild_loader("./data/in_the_wild/", seed=args.seed, batch_size=args.batch_size)
+    in_the_wild_loader = get_in_the_wild_loader("/kaggle/input/in-the-wild-dataset/release_in_the_wild", seed=args.seed, batch_size=args.batch_size)
     libri_trn_loader, libri_dev_loader, libri_eval_loader = get_libri_loader("./data/LibriSeVoc/", seed=args.seed, batch_size=args.batch_size)
 
     optim = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
