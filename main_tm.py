@@ -73,7 +73,7 @@ def main(args: argparse.Namespace) -> None:
 
     noise_scale = 0.05
     wave_trn_loader, wave_dev_loader, wave_eval_loader = get_wavefake_loader('/kaggle/input/fakeaudio/generated_audio', seed=1234, batch_size=config["batch_size"])
-    in_the_wild_loader = get_in_the_wild_loader("/home/mikiya/data/in_the_wild/", seed=1234, batch_size=config['batch_size'],)
+    in_the_wild_loader = get_in_the_wild_loader("/kaggle/input/in-the-wild-dataset/release_in_the_wild", seed=1234, batch_size=config['batch_size'],)
     libri_trn_loader, libri_dev_loader, libri_eval_loader = get_libri_loader("/home/mikiya/data/LibriSeVoc/", seed=1234,batch_size=config['batch_size'])
 
     if args.eval:
