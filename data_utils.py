@@ -350,12 +350,13 @@ def genLibriSeVoc_list(data_path, is_train=False, is_eval=False):
     data_list1 = []
     data_list = []
     folders = ['diffwave',  'gt',  'melgan',  'parallel_wave_gan',  'wavegrad',  'wavenet',  'wavernn']
+    txt_data_path = "/kaggle/input/librisevoc/"
     if is_train:
-        file = os.path.join(data_path, 'train.txt')
+        file = os.path.join(txt_data_path, 'train.txt')
     elif is_eval:
-        file = os.path.join(data_path, 'test.txt')
+        file = os.path.join(txt_data_path, 'test.txt')
     else:
-        file = os.path.join(data_path, 'dev.txt')
+        file = os.path.join(txt_data_path, 'dev.txt')
 
     for folder in folders:
         with open(file, "r") as f:
