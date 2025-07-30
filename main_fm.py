@@ -125,15 +125,17 @@ def main(args):
             optim.step()
 
             if steps % args.eval_steps == 0:
-                eval_acc, eval_auroc, eval_eer = run_validation(model, feature_extractor, wave_dev_loader,sr=sampling_rate)
-                auroc_list.append(eval_auroc)
+                #eval_acc, eval_auroc, eval_eer = run_validation(model, feature_extractor, wave_dev_loader,sr=sampling_rate)
+                eval_acc, eval_eer = run_validation(model, feature_extractor, wave_dev_loader,sr=sampling_rate)
+                #auroc_list.append(eval_auroc)
                 acc_list.append(eval_acc)
                 err_list.append(eval_eer[0])
                 model.train()
 
-        auroc = roc_auc_score(labels_list, outputs_list)
+        #auroc = roc_auc_score(labels_list, outputs_list)
         eer = compute_eer(np.array(labels_list), np.array(outputs_list))
-        print(f'Training epoch: {epoch} \t AUROC: {auroc} \t EER: {eer}')
+        #print(f'Training epoch: {epoch} \t AUROC: {auroc} \t EER: {eer}')
+        print(f'Training epoch: {epoch} \t AUROC: NOT USED \t EER: {eer}')
 
     os.makedirs(args.output_dir, exist_ok=True)
     torch.save(model.state_dict(), f'{args.output_dir}/{args.model}_epoch_{args.epoch}_lr_{args.lr}_bs_{args.batch_size}.pth')
