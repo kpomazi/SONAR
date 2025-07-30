@@ -11,7 +11,7 @@ class Wav2Vec2(nn.Module):
         super().__init__()
         self.num_labels = 2
         self.pooling_mode = pooling_mode
-        self.wav2vec2 = Wav2Vec2Model.from_pretrained(model_name)
+        self.wav2vec2 = Wav2Vec2Model.from_pretrained(model_name, ctc_zero_infinity=True)
         self.config = self.wav2vec2.config
         self.classifier = ClassificationHead(self.wav2vec2.config)
 
