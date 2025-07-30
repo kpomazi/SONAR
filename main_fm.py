@@ -34,14 +34,15 @@ def run_validation(model, feature_extractor, data_loader, sr):
             outputs_list.extend(batch_probs[:, 1].tolist())
             labels_list.extend(batch_label)
 
-        auroc = roc_auc_score(labels_list, outputs_list)
+        #auroc = roc_auc_score(labels_list, outputs_list)
         eer = compute_eer(np.array(labels_list), np.array(outputs_list))
         preds = (np.array(outputs_list) > eer[1]).astype(int)
         acc = np.mean(np.array(labels_list) == np.array(preds))
         prec = precision_score(labels_list, preds)
         recall = recall_score(labels_list, preds)
         f1 = f1_score(labels_list, preds)
-        print(f'Validation Accuracy: {acc} \t F1: {f1} \t Precision: {prec} \t Recall: {recall}, AUROC: {auroc} \t EER: {eer}')
+        #print(f'Validation Accuracy: {acc} \t F1: {f1} \t Precision: {prec} \t Recall: {recall}, AUROC: {auroc} \t EER: {eer}')
+        print(f'Validation Accuracy: {acc} \t F1: {f1} \t Precision: {prec} \t Recall: {recall}, AUROC: NOT USED \t EER: {eer}')
 
 def main(args):
 
