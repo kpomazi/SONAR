@@ -44,6 +44,8 @@ def run_validation(model, feature_extractor, data_loader, sr):
         #print(f'Validation Accuracy: {acc} \t F1: {f1} \t Precision: {prec} \t Recall: {recall}, AUROC: {auroc} \t EER: {eer}')
         print(f'Validation Accuracy: {acc} \t F1: {f1} \t Precision: {prec} \t Recall: {recall}, AUROC: NOT USED \t EER: {eer}')
 
+        return acc, eer
+
 def main(args):
 
     if args.model == 'wave2vec2bert':
