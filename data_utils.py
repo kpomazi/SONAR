@@ -220,7 +220,7 @@ def genWavefake_list(data_path, is_train=False, is_eval=False):
             d_meta[key] = 0
 
     # Get LJSpeech
-    real_datapath = '/kaggle/input/the-lj-speech-dataset/LJSpeech-1.1/wavs'
+    real_datapath = '/content/drive/MyDrive/DATASETS/LJSpeech-1.1/wavs'
     file_list = os.listdir(real_datapath)
     if is_train:
         file_list = file_list[:int(0.7 * len(file_list))]
@@ -350,7 +350,7 @@ def genLibriSeVoc_list(data_path, is_train=False, is_eval=False):
     data_list1 = []
     data_list = []
     folders = ['diffwave',  'gt',  'melgan',  'parallel_wave_gan',  'wavegrad',  'wavenet',  'wavernn']
-    txt_data_path = "/kaggle/input/librisevoc/"
+    txt_data_path = "/content/drive/MyDrive/DATASETS/LibriSeVoc"
     if is_train:
         file = os.path.join(txt_data_path, 'train.txt')
     elif is_eval:
