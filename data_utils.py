@@ -81,31 +81,31 @@ def get_custom_loader(seed: int,
                       dataset: str):
 
     if dataset == 'openai':
-        database_path = './data/SONAR_dataset/OpenAI/'
+        database_path = '/kaggle/input/sonar-dataset/SONAR_dataset/OpenAI/'
         d_label_custom, file_custom = genCustom_list(database_path, fake=True)
     elif dataset == 'flashspeech':
-        database_path = './data/SONAR_dataset/FlashSpeech/'
+        database_path = '/kaggle/input/sonar-dataset/SONAR_dataset/FlashSpeech/'
         d_label_custom, file_custom = genCustom_list(database_path, fake=True)
     elif dataset == 'voicebox':
-        database_path = './data/SONAR_dataset/VoiceBox/'
+        database_path = '/kaggle/input/sonar-dataset/SONAR_dataset/VoiceBox/'
         d_label_custom, file_custom = genCustom_list(database_path, fake=True)
     elif dataset == 'xtts':
-        database_path = './data/SONAR_dataset/xTTS/'
+        database_path = '/kaggle/input/sonar-dataset/SONAR_dataset/xTTS/'
         d_label_custom, file_custom = genCustom_list(database_path, fake=True)
     elif dataset == 'naturalspeech3':
-        database_path = './data/SONAR_dataset/NaturalSpeech3/'
+        database_path = '/kaggle/input/sonar-dataset/SONAR_dataset/NaturalSpeech3/'
         d_label_custom, file_custom = genCustom_list(database_path, fake=True)
     elif dataset == 'valle':
-        database_path = './data/SONAR_dataset/VALLE/'
+        database_path = '/kaggle/input/sonar-dataset/SONAR_dataset/VALLE/'
         d_label_custom, file_custom = genCustom_list(database_path, fake=True)
     elif dataset == 'prompttts2':
-        database_path = './data/SONAR_dataset/PromptTTS2/'
+        database_path = '/kaggle/input/sonar-dataset/SONAR_dataset/PromptTTS2/'
         d_label_custom, file_custom = genCustom_list(database_path, fake=True)
     elif dataset == 'audiogen':
-        database_path = './data/SONAR_dataset/AudioGen/'
+        database_path = '/kaggle/input/sonar-dataset/SONAR_dataset/AudioGen/'
         d_label_custom, file_custom = genCustom_list(database_path, fake=True)
     elif dataset == 'seedtts':
-        database_path = './data/SONAR_dataset/SeedTTS/'
+        database_path = '/kaggle/input/sonar-dataset/SONAR_dataset/SeedTTS/'
         d_label_custom, file_custom = genCustom_list(database_path, fake=True)
 
     dataset = AudioDataset(list_IDs=file_custom,
