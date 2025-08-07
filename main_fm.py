@@ -140,7 +140,7 @@ def main(args):
         #print(f'Training epoch: {epoch} \t AUROC: NOT USED \t EER: {eer}')
 
     os.makedirs(args.output_dir, exist_ok=True)
-    torch.save(model.state_dict(), f'{args.output_dir}/{args.model}_epoch_{args.epoch}_lr_{args.lr}_bs_{args.batch_size}.pth')
+    torch.save(model.state_dict(), f'{args.output_dir}/{args.model}_epoch_{args.epochs}_lr_{args.lr}_bs_{args.batch_size}.pth')
 
     print('finished')
 
